@@ -1,0 +1,1240 @@
+// Hello these are the programs of data structure in C/C++ language !
+
+
+
+// Find the smallest element in an array
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int a[10],n,i,sa=0;
+	clrscr();
+	printf("Enter the size of an array\n");
+	scanf("%d",&n);
+	printf("Enter the %d elements in an array\n",n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	sa=a[0];
+	for(i=0;i<n;i++)
+	{
+		if(a[i]<sa)
+		{
+			sa=a[i];
+		}
+	}
+	printf("\nThe smallest number in an array is %d",sa);
+	getch();
+}
+
+
+
+
+
+
+
+// Find the largest element in an array
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int a[10],n,i,la=0;
+	clrscr();
+	printf("Enter the size of an array\n");
+	scanf("%d",&n);
+	printf("Enter the %d elements in an array\n",n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	la=a[0];
+	for(i=0;i<n;i++)
+	{
+		if(a[i]>la)
+		{
+			la=a[i];
+		}
+	}
+	printf("The %d is the largest\n",la);
+	getch();
+}
+
+
+
+
+
+
+//check the number is in an array
+//Linear search
+#include<conio.h>
+#include<stdio.h>
+void main()
+{
+	int a[10],n,i,f=0,key;
+	clrscr();
+	printf("Enter the size of an array\n");
+	scanf("%d",&n);
+	printf("Enter the %d elements of array\n",n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	printf("Enter the element you want to find\n");
+	scanf("%d",&key);
+	for(i=0;i<n;i++)
+	{
+		if(a[i]==key)
+		{
+			f=1;
+			break;
+		}
+	}
+	if(f==1)
+	printf("\n%d found at %d location\n",key,a[i]);
+	else
+	printf("%d not found",key);
+	getch();
+}
+
+
+
+//check the number is in an array
+//Binaray search
+#include<conio.h>
+#include<stdio.h>
+void main()
+{
+	int a[10],n,i,f=0,key,mid,low,high;
+	clrscr();
+	printf("Enter the size of an array\n");
+	scanf("%d",&n);
+	printf("Enter the %d elements of array\n",n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	printf("Enter the element you want to find\n");
+	scanf("%d",&key);
+	low=0;
+	high=n;
+	while(low<high)
+	{
+		mid=(low+high)/2;
+		if(a[mid]==key)
+		{
+			f=1;
+			break;
+		}
+		else if(a[mid]<key)
+		{
+			low=mid+1;
+		}
+		else
+		{
+			high=mid-1;
+		}
+	}
+	if(f==1)
+	printf("\n%d found at %d location\n",key,mid+1);
+	else
+	printf("%d not found",key);
+	getch();
+}
+
+
+
+//Frequency of elements in array
+#include<conio.h>
+#include<stdio.h>
+void main()
+{
+	int a[10],n,i,j,k,f,c;
+	clrscr();
+	printf("Enter the size of an array\n");
+	scanf("%d",&n);
+	printf("Enter %d elements in an array\n",n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	for(i=0;i<n;i++)
+	{
+		f=0;
+		c=1;
+		for(k=0;k<i;
+		k++)
+		{
+			if(a[i]==a[k])
+			{
+				f=1;
+				break;
+			}
+		}
+		if(f==0)
+		{
+			for(j=i+1;j<n;j++)
+			{
+				if(a[i]==a[j])
+				{
+					c++;
+				}
+			}
+		printf("%d found %d times\n",a[i],c);
+		}
+	}
+	getch();
+}
+
+
+
+
+// reverse of an array
+#include<conio.h>
+#include<stdio.h>
+void main()
+{
+	int a[10],n,i,rev;
+	clrscr();
+	printf("Enter the size of an array\n");
+	scanf("%d",&n);
+	printf("\nEnter the %d elements in an array\n",n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	for(i=0;i<n/2;i++)
+	{
+		rev=a[i];
+		a[i]=a[n-i-1];
+		a[n-i-1]=rev;
+	}
+	printf("\nThe reverse of an array is down below\n");
+	for(i=0;i<n;i++)
+	{
+		printf("%d ",a[i]);
+	}
+	getch();
+}
+
+
+// insertion at the front of an array
+#include<conio.h>
+#include<stdio.h>
+void main()
+{
+	int a[10],i,n,ele,len;
+	clrscr();
+	printf("Enter the size of an array\n");
+	scanf("%d",&n);
+	printf("Enter %d elements in an array\n",n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	len=n;
+	for(i=n;i>0;i--)
+	{
+		a[i+1]=a[i];
+	}
+	printf("Enter the element you want to insert at front\n");
+	scanf("%d",&ele);
+	a[0]=ele;
+	for(i=0;i<=len;i++)
+	{
+		printf("%d ",a[i]);
+	}
+	getch();
+}
+
+
+
+// insertion at the back of an array
+#include<conio.h>
+#include<stdio.h>
+void main()
+{
+	int a[10],i,n,ele,len;
+	clrscr();
+	printf("Enter the size of an array\n");
+	scanf("%d",&n);
+	printf("Enter %d elements in an array\n",n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	len=n;
+	printf("Enter the element you want to insert at back\n");
+	scanf("%d",&ele);
+	a[n]=ele;
+	for(i=0;i<=len;i++)
+	{
+		printf("%d ",a[i]);
+	}
+	getch();
+}
+
+
+
+
+// delete element at the front of an array
+#include<conio.h>
+#include<stdio.h>
+void main()
+{
+	int a[10],i,n,ele;
+	clrscr();
+	printf("Enter the size of an array\n");
+	scanf("%d",&n);
+	printf("Enter the %d elements in an array\n",n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	for(i=0;i<n;i++)
+	{
+		a[i]=a[i+1];
+	}
+	n--;
+	printf("The front element of an array is deleted\n");
+	for(i=0;i<n;i++)
+	{
+		printf("%d ",a[i]);
+	}
+	getch();
+}
+
+
+// delete element at the back of an array
+#include<conio.h>
+#include<stdio.h>
+void main()
+{
+	int a[10],i,n,ele;
+	clrscr();
+	printf("Enter the size of an array\n");
+	scanf("%d",&n);
+	printf("Enter the %d elements in an array\n",n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	n--;
+	printf("The front element of an array is deleted\n");
+	for(i=0;i<n;i++)
+	{
+		printf("%d ",a[i]);
+	}
+	getch();
+}
+
+
+
+
+//Delete at any position in an array
+#include<conio.h>
+#include<stdio.h>
+void main()
+{
+	int a[10],n,i,ele,pos,len;
+	clrscr();
+	printf("Enter the size of an array\n");
+	scanf("%d",&n);
+	printf("Enter %d elements in an array\n",n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	printf("Enter the position you want to delete\n");
+	scanf("%d",&pos);
+	ele=a[pos-1];
+	len=n;
+	printf("The elements has been deleted\n");
+	for(i=pos-1;i<n-1;i++)
+	{
+		a[i]=a[i+1];
+	}
+	len--;
+	for(i=0;i<len;i++)
+	{
+		printf("%d ",a[i]);
+	}
+	getch();
+}
+
+
+
+//Selection sort
+
+#include<conio.h>
+#include<stdio.h>
+void main()
+{
+	int a[10],n,i,j,t;
+	clrscr();
+	printf("Enter the size of an array\n");
+	scanf("%d",&n);
+	printf("Enter the %d elements\n",n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+			if(a[i]<a[j])
+			{
+				t=a[i];
+				a[i]=a[j];
+				a[j]=t;
+			}
+		}
+	}
+	for(i=0;i<n;i++)
+	{
+	printf("%d ",a[i]);
+	}
+	getch();
+}
+
+//Bubble sort
+#include<conio.h>
+#include<stdio.h>
+void main()
+{
+	int a[10],n,i,j,t;
+	clrscr();
+	printf("Enter the size of an array\n");
+	scanf("%d",&n);
+	printf("Enter %d elements of an array\n",n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	printf("Array is sorted below\n");
+	for(i=0;i<n-1;i++)
+	{
+		for(j=i+1;j<n;j++)
+		{
+			if(a[j]<a[i])
+			{
+				t=a[i];
+				a[i]=a[j];
+				a[j]=t;
+			}
+		}
+	}
+	for(i=0;i<n;i++)
+	{
+		printf("%d ",a[i]);
+	}
+	getch();
+}
+
+
+
+
+
+//2D array matrix Addition
+#include<stdio.h>
+#include<conio.h>
+void add();
+void add(int a[10][10] , int b[10][10],int n,int m)
+{
+	int c[10][10],i,j;
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<m;j++)
+		{
+			c[i][j]=a[i][j]+b[i][j];
+
+		}
+	}
+	printf("\nThe addition of 2 arrays are given below\n");
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<m;j++)
+		{
+			printf("%d\t",c[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+
+void main()
+{
+	int a[10][10],b[10][10],i,j,n,m;
+	clrscr();
+	printf("Enter the size of an array\n");
+	scanf("%d %d",&n,&m);
+	printf("Enter %d elements in an 1st array\n",n*m);
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<m;j++)
+		{
+			scanf("%d",&a[i][j]);
+		}
+	}
+	printf("Enter %d elements in an 2nd array\n",n*m);
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<m;j++)
+		{
+			scanf("%d",&b[i][j]);
+		}
+	}
+	add(a,b,n,m);
+	getch();
+}
+
+
+
+//2D array matrix Multiplication
+#include<stdio.h>
+#include<conio.h>
+void add();
+void add(int a[10][10] , int b[10][10],int n,int m)
+{
+	int c[10][10],i,j,k;
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<m;j++)
+		{
+			c[i][j]=0;
+			for(k=0;k<m;k++)
+			{
+				c[i][j]=a[i][k]*b[k][j];
+			}
+
+		}
+	}
+	printf("\nThe multiplication of 2 arrays are given below\n");
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<m;j++)
+		{
+			printf("%d\t",c[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+
+void main()
+{
+	int a[10][10],b[10][10],i,j,n,m;
+	clrscr();
+	printf("Enter the size of an array\n");
+	scanf("%d %d",&n,&m);
+	printf("Enter %d elements in an 1st array\n",n*m);
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<m;j++)
+		{
+			scanf("%d",&a[i][j]);
+		}
+	}
+	printf("Enter %d elements in an 2nd array\n",n*m);
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<m;j++)
+		{
+			scanf("%d",&b[i][j]);
+		}
+	}
+	add(a,b,n,m);
+	getch();
+}
+
+
+
+
+//Length of a string
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+void main()
+{
+	char a[10];
+	int i=0,count=0;
+	clrscr();
+	printf("Enter the string below\n");
+	gets(a);
+	while(a[i]!='\0')
+	{
+		if(a[i]!=' ')
+		{
+			count++;
+		}
+		i++;
+	}
+	printf("\n%d is the length of a string",count);
+	getch();
+}
+
+
+
+
+//Copy of a string
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+void main()
+{
+	char a[20],b[20];
+	int i=0;
+	clrscr();
+	printf("Enter the string below\n");
+	gets(a);
+	while(a[i]!='\0')
+	{
+		b[i]=a[i];
+		i++;
+	}
+	b[i]='\0';
+	printf("\nThe copy of a string is down below\n");
+	puts(b);
+	getch();
+}
+
+
+
+
+#include<conio.h>
+#include<stdio.h>
+#include<string.h>
+
+//count of vovels in string
+#include<conio.h>
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+	char a[20];
+	int i,count=0;
+	clrscr();
+	printf("Enter the string to count the number of vovels\n");
+	gets(a);
+	i=0;
+	while(a[i]!='\0')
+	{
+		if(a[i]=='a'|| a[i]=='e'|| a[i]=='i'|| a[i]=='o'|| a[i]=='u')
+		{
+			count++;
+
+		}
+		i++;
+	}
+	printf("The number of vovels in the string are %d",count);
+	getch();
+}
+
+
+
+
+
+//Cancatination of String
+#include<conio.h>
+#include<stdio.h>
+#include<string.h>
+
+void main()
+{       char a[10],b[10];
+	int i,j;
+	clrscr();
+	printf("Enter the String A below\n");
+	gets(a);
+	printf("Enter the String B below\n");
+	gets(b);
+	i=0;
+	while(a[i]!='\0')
+	{
+		i++;
+	}
+	a[i]=' ';
+	i++;
+	j=0;
+	while(b[j]!='\0')
+	{
+		a[i]=b[j];
+		j++;
+		i++;
+	}
+	a[i]=='\0';
+	printf("\nThe string after cancatination is below\n");
+	puts(a);
+	getch();
+}
+
+
+
+
+//Compare two strings
+#include<conio.h>
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+	char a[10],b[10];
+	int i=0,f=0;
+	clrscr();
+	printf("Enter the 1st string\n");
+	gets(a);
+	printf("Enter the 2nd string\n");
+	gets(b);
+	while(a[i]!='\0'&& b[i]!='\0')
+	{
+		if(a[i]!=b[i])
+		{
+			f=1;
+			break;
+		}
+		i++;
+	}
+	if(f==1)
+	printf("These two strings are not equal\n1st!=2nd\n");
+	else
+	printf("These two strings are equal\n1st=2nd\n");
+	getch();
+}
+
+
+
+
+
+
+
+//Insertion Sort
+#include<conio.h>
+#include<stdio.h>
+void main()
+{
+	int a[10],i,n,k,j;
+	clrscr();
+	printf("Enter the size of an array\n");
+	scanf("%d",&n);
+	printf("Enter %d elements in an array\n",n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	for(i=1;i<n;i++)
+	{
+		k=a[i];
+		j=i-1;
+		while(k<a[j] && j>=0)
+		{
+			a[j+1]=a[j];
+			j--;
+		}
+		a[j+1]=k;
+	}
+	printf("\nThe sorted array is given below\n");
+	for(i=0;i<n;i++)
+	{
+		printf("%d ",a[i]);
+	}
+	getch();
+}
+
+
+
+//Sparse matrix to Information matrix
+#include<conio.h>
+#include<stdio.h>
+void main()
+{
+	int s[10][10],in[10][10];
+	int i,j,n,m,count=0,p,q;
+	clrscr();
+	printf("Enter the rows and columns of Spars Matrix\n");
+	scanf("%d %d",&n,&m);
+	printf("\nEnter the %d elements in Spars Matrix\n",n*m);
+
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<m;j++)
+		{
+			scanf("%d",&s[i][j]);
+		}
+	}
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<m;j++)
+		{
+			if(s[i][j]!=0)
+			{
+				count++;
+			}
+		}
+	}
+	printf("The number of info elements is = %d \n",count);
+	in[0][0]=n;
+	in[0][1]=m;
+	in[0][2]=count;
+	p=0;
+	q=0;
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<m;j++)
+		{ 
+			if(s[i][j]!=0)
+			{
+				p++;
+				q=0;
+				in[p][q]=i;
+				q++;
+				in[p][q]=j;
+				q++;
+				in[p][q]=s[i][j];
+			}
+		}
+	}
+	for(i=0;i<count+1;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			printf("%d ",in[i][j]);
+		}
+		printf("\n");
+	}
+	getch();
+}
+
+
+
+
+
+
+//information matrix to spars matrix
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int s[10][10],in[10][10],n,i,j,p=1,q=0;
+	clrscr();
+	printf("Enter the number of info elements\n");
+	scanf("%d",&n);
+	n++;
+	printf("\nEnter the %d elements\n",n*3);
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			printf("in[%d][%d]= ",i,j);
+			scanf("%d",in[i][j]);
+		}
+	}
+	printf("Your info matrix is given below\n");
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			printf("%d ",in[i][j]);
+		}
+		printf("\n");
+	}
+	for(i=0;i<in[0][0];i++)
+	{
+		for(j=0;j<in[0][1];j++)
+		{
+			if(i==in[p][q] && j==in[p][q+1])
+			{
+				s[i][j]=in[p][q+2];
+				p++;
+			}
+			else
+			s[i][j]=0;
+		}
+	}
+	printf("\nYour Spars matrix is given below\n");
+	for(i=0;i<in[0][0];i++)
+	{
+		for(j=0;j<in[0][1];j++)
+		{
+			printf("%d ",s[i][j]);
+		}
+		printf("\n");
+	}
+	getch();
+}
+
+
+
+
+
+
+// Recursion
+#include<stdio.h>
+#include<conio.h>
+int fact(int);
+void main()
+{
+	int n;
+	clrscr();
+
+	printf("Enter the number you want to get Factorial\n");
+	scanf("%d",&n);
+	printf("The factorical of %d is %d",n,fact(n));
+
+	getch();
+}
+int fact(int n)
+{
+	if(n==1)
+		return(n);
+	else
+	return(n*fact(n-1));
+}
+
+
+
+
+
+//stack push,pop and display functions
+
+
+#include<stdio.h>
+#include<conio.h>
+
+#define s 10
+int t=-1;
+void push(int *);
+void pop(int *);
+void disp(int *);
+void main()
+{
+	int n,a[s];
+	char c;
+	clrscr();
+	do
+	{
+		printf("\n\n*Press 1 to push*\n**Press 2 to pop**\n***Press 3 to display***\n");
+		scanf("%d",&n);
+		switch(n)
+		{
+			case 1:push(a);
+				break;
+			case 2:pop(a);
+				break;
+			case 3:disp(a);
+				break;
+			default:
+			printf("\nThe key is invlaid\n");
+		}
+		printf("\nPress y to continue\nOr any key to exit");
+		c=getche();
+	}while(c=='y');
+	getch();
+}
+void push(int a[])
+{
+	if(t==s-1)
+	{
+		printf("\nStack is full\n");
+	}
+	else
+	{
+		t=t+1;
+		printf("\nEnter the element to be pushed\n");
+		scanf("%d",&a[t]);
+		printf("%d sucessfully pushed\n",a[t]);
+	}
+}
+void pop(int a[])
+{
+	if(t==-1)
+	{
+		printf("\nThe stack is empty\n");
+	}
+	else
+	{
+		t=t-1;
+		printf("\nThe element is poped\n");
+	}
+}
+void disp(int a[])
+{
+	int i;
+	if(t==-1)
+	{
+		printf("\nThe stack is empty\n");
+	}
+	else
+	{
+		printf("\nThe elements of stack are\n");
+		for(i=0;i<=t;i++)
+		{
+			printf("a[%d] = %d\n",i,a[t]);
+		}
+	}
+}
+
+
+
+
+
+//Queue enque,deque and display
+
+#include<stdio.h>
+#include<conio.h>
+
+#define s 10
+int front=-1;
+int rear=-1;
+void enq(int *);
+void deq(int *);
+void disp(int *);
+
+void main()
+{
+	int a[s],n;
+	char c;
+	clrscr();
+	do
+	{
+		printf("\n\n*Press 1 to Enque*\n**Press 2 to Deque**\n***Press 3 to Dequeue***\n");
+		scanf("%d",&n);
+		switch(n)
+		{
+			case 1:	enq(a);
+				break;
+			case 2:	deq(a);
+				break;
+			case 3:	disp(a);
+				break;
+			default:
+			printf("\n!!!you have pressed invalid key!!!\n");
+		}
+		printf("\n\nPress 'Y' to continue\nPress any key to exit\n\n");
+		c=getche();
+	}while(c=='y');
+	getch();
+}
+void enq(int a[])
+{
+	if(rear==s-1)
+	{
+		printf("\nThe que is full\n");
+	}
+	else
+	{
+		if(front==-1 || rear==-1)
+		{
+			front++;
+			rear++;
+		}
+		rear++;
+	}
+	printf("\nEnter the element to enque\n");
+	scanf("%d",&a[rear]);
+	printf("%d sucessfully enqued\n");
+}
+void deq(int a[])
+{
+	if(front>rear || front==-1)
+	{
+		printf("\nSorry there is no element to deque");
+	}
+	else
+	{
+		printf("\n%d sucessfully dequed\n",a[front]);
+		front++;
+	}
+	if(front>rear)
+	{
+		front=-1;
+		rear=-1;
+	}
+}
+void disp(int a[])
+{
+	int i;
+	if(front>rear || front==-1)
+	{
+		printf("\nSorry there is no elements in que\n");
+	}
+	else
+	{
+		printf("\nThe elements in Que are\n");
+		for(i=front;i<=rear;i++)
+		{
+			printf("a[%d] = %d ",i,a[i]);
+		}
+	}
+}
+
+
+
+
+
+//single linked list with display,create,largest,smallest and insertion at any position
+
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+
+void disp();
+void cr();
+void lar();
+void sm();
+void ins();
+struct node
+{
+	int data;
+	struct node * next;
+};
+struct node *temp,*start=NULL,*pre=NULL,*nec=NULL;
+
+void main()
+{
+	int n;
+	char c;
+	clrscr();
+	do
+	{
+		printf("\n\n*Press 1 to create\n**Press 2 to find largest**\n***Press 3 to find smallest***\n****Press 4 to insert****\n****Press 5 to display****\n");
+		scanf("%d",&n);
+		switch(n)
+		{
+			case 1:	cr();
+				break;
+			case 2:	lar();
+				break;
+			case 3:	sm();
+				break;
+			case 4:	ins();
+				break;
+			case 5:	disp();
+				break;
+			default:
+			printf("\n\n!!!Invalid key!!!\n");
+		}
+		printf("\n\nPress 'Y' to continue\nPress any key to exit\n");
+		c=getche();
+	}while(c=='y');
+	getch();
+}
+void cr()
+{
+	struct node *p;
+	p=(struct node*)malloc(sizeof(struct node));
+	printf("\nEnter the data in linked list\n");
+	scanf("%d",&p->data);
+	p->next=NULL;
+	if(start==NULL)
+	{
+		start=p;
+	}
+	else
+	{
+		temp=start;
+		while(temp->next!=NULL)
+		{
+			temp=temp->next;
+		}
+		temp->next=p;
+	}
+}
+void disp()
+{
+	if(start==NULL)
+	{
+		printf("\nThe linked list is empty\n");
+	}
+	else
+	{
+		temp=start;
+		while(temp!=NULL)
+		{
+			printf("%d ",temp->data);
+			temp=temp->next;
+		}
+	}
+}
+
+void lar()
+{
+	int large=0;
+	if (start == NULL)
+	{
+		printf("\nThe linked list is empty\n");
+	}
+	else
+	{
+		temp = start;
+		while (temp != NULL)
+		{
+			if (temp->data > large)
+			{
+				large = temp->data;
+			}
+			temp = temp->next;
+		}
+		printf("\n%d is the largest data\n",large);
+	}
+}
+void sm()
+{
+	int sma;
+	if(start==NULL)
+	{
+		printf("\nThe linked list is empty\n");
+	}
+	else
+	{
+		temp = start;
+		while (temp != NULL)
+		{
+			if(temp->data<sma)
+			{
+				sma=temp->data;
+			}
+			temp=temp->next;
+		}
+		printf("\n%d is the smallest\n",sma);
+	}
+}
+void ins()
+{
+	int ele,pos;
+	int cpos=1;
+	struct node * q;
+	q=(struct node*)malloc(sizeof(struct node));
+	printf("\nEnter the position you want to insert an element\n");
+	scanf("%d",&pos);
+	printf("\nEnter the element you want to insert\n");
+	scanf("%d",&ele);
+
+	if(q==NULL)
+	{
+		printf("\nIt failed to locate\n");
+	}
+	q->data=ele;
+	q->next=NULL;
+	if(start==NULL || pos <=1)
+	{
+		q->next=start;
+		start=q;
+	}
+	temp=start;
+	while(temp!=NULL && cpos < pos - 1)
+	{
+		temp=temp->next;
+		cpos++;
+	}
+	if(temp==NULL)
+	{
+		printf("\nInvalid position\n");
+		free(q);
+	}
+	q->next=temp->next;
+	temp->next=q;
+}
+
+
+
+
+
